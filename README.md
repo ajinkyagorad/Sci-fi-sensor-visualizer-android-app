@@ -2,6 +2,8 @@
 
 A modern Android application that visualizes sensor data with sci-fi aesthetics using Jetpack Compose and interactive animations.
 
+> This project was developed using Android Studio and Windsurf, leveraging modern Android development tools and practices.
+
 ## Screenshot
 
 <img src="img/app_visual.jpg" alt="App Screenshot" style="height: 400px;">
