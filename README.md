@@ -4,7 +4,7 @@ A modern Android application that visualizes sensor data with sci-fi aesthetics 
 
 ## Screenshot
 
-![App Screenshot](img/app_visual.jpg)
+<img src="img/app_visual.jpg" alt="App Screenshot" style="height: 400px;">
 
 The app features a modern, sci-fi inspired interface with real-time sensor visualizations, orbital animations, and translucent UI elements.
 
