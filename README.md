@@ -2,6 +2,12 @@
 
 A modern Android application that visualizes sensor data with sci-fi aesthetics using Jetpack Compose and interactive animations.
 
+## Screenshot
+
+![App Screenshot](img/app_visual.jpg)
+
+The app features a modern, sci-fi inspired interface with real-time sensor visualizations, orbital animations, and translucent UI elements.
+
 ## Features
 
 - Real-time sensor data visualization (Accelerometer, Gyroscope, Magnetometer, Audio)
