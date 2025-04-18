@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: transparent;
+        }
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .orbit-system {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+        .orbit {
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+        .planet {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            filter: blur(2px);
+        }
+        .glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(8px);
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="orbit-system" id="orbitSystem"></div>
+    </div>
+    <script>
+        function createOrbitSystem(intensity) {
+            const container = document.getElementById('orbitSystem');
+            container.innerHTML = '';
+            
+            const orbits = 4;
+            const planets = 3;
+            
+            for (let i = 0; i < orbits; i++) {
+                const orbit = document.createElement('div');
+                orbit.className = 'orbit';
+                const size = (i + 1) * 40;
+                orbit.style.width = size + 'px';
+                orbit.style.height = size + 'px';
+                orbit.style.left = (200 - size) / 2 + 'px';
+                orbit.style.top = (200 - size) / 2 + 'px';
+                container.appendChild(orbit);
+
+                for (let j = 0; j < planets; j++) {
+                    const planet = document.createElement('div');
+                    planet.className = 'planet';
+                    const planetSize = 4 + intensity * 2;
+                    planet.style.width = planetSize + 'px';
+                    planet.style.height = planetSize + 'px';
+                    
+                    const glow = document.createElement('div');
+                    glow.className = 'glow';
+                    glow.style.width = planetSize * 3 + 'px';
+                    glow.style.height = planetSize * 3 + 'px';
+                    
+                    const hue = (i * 90 + intensity * 60) % 360;
+                    const color = `hsl(${hue}, 80%, 60%)`;
+                    planet.style.background = color;
+                    glow.style.background = color;
+                    
+                    container.appendChild(planet);
+                    container.appendChild(glow);
+                    
+                    anime({
+                        targets: [planet, glow],
+                        translateX: [
+                            {
+                                value: function() {
+                                    return size/2 * Math.cos(2 * Math.PI * j / planets);
+                                }
+                            }
+                        ],
+                        translateY: [
+                            {
+                                value: function() {
+                                    return size/2 * Math.sin(2 * Math.PI * j / planets);
+                                }
+                            }
+                        ],
+                        rotate: [0, 360],
+                        duration: 4000 + i * 1000,
+                        loop: true,
+                        easing: 'linear',
+                        delay: j * 100
+                    });
+                }
+            }
+        }
+
+        // Initial creation
+        createOrbitSystem(0.5);
+        
+        // Function to be called from Android
+        function updateVisualization(intensity) {
+            createOrbitSystem(intensity);
+        }
+    </script>
+</body>
+</html>
