@@ -6,7 +6,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.LocationOn
-import androidx.compose.material.icons.rounded.Email
+import androidx.compose.material.icons.rounded.Chat
+import androidx.compose.material.icons.rounded.Chat
 import androidx.compose.material.icons.rounded.PlayArrow
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
@@ -32,7 +33,7 @@ fun QuickMenu(
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         MenuIcon(Icons.Rounded.LocationOn, "Location", onLocationClick)
-        MenuIcon(Icons.Rounded.Email, "Message", onMessageClick)
+        MenuIcon(Icons.Rounded.Chat, "Message", onMessageClick)
         MenuIcon(Icons.Rounded.PlayArrow, "Music", onMusicClick)
     }
 }

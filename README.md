@@ -4,11 +4,15 @@ A modern Android application that visualizes sensor data with sci-fi aesthetics 
 
 > This project was developed using Android Studio and Windsurf, leveraging modern Android development tools and practices.
 
-## Screenshot
+## Screenshots
 
+### Main Interface
 <img src="img/app_visual.jpg" alt="App Screenshot" style="height: 400px;">
 
-The app features a modern, sci-fi inspired interface with real-time sensor visualizations, orbital animations, and translucent UI elements.
+### Chat Interface with OpenAI Integration
+<img src="img/app_openai_chat.jpg" alt="Chat Interface" style="height: 400px;">
+
+The app features a modern, sci-fi inspired interface with real-time sensor visualizations, orbital animations, and translucent UI elements. It also includes an integrated chat interface with OpenAI for natural language interactions.
 
 ## Features
 
